@@ -1,0 +1,104 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" href="{% static 'frontend/favicon.png' %}">
+
+    <title>Júnior 12 | Contato</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'frontend/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'frontend/style.css' %}" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="/">Júnior 12</a>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Início <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/contato">Contato <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a href="https://www.facebook.com/J%C3%BAnior-12-1335863263165586" target="_blank" ><img class="nav-link" src="{% static 'frontend/logoface.png' %}"></a>
+          </li>
+          <li class="nav-item">
+            <a href="https://twitter.com/Junior12combr" target="_blank" ><img class="nav-link" src="{% static 'frontend/logotwitter.png' %}"></a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.instagram.com/junior12combr/" target="_blank" ><img class="nav-link" src="{% static 'frontend/logoinsta.png' %}"></a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.telegram.me/Junior12combr" target="_blank" ><img class="nav-link" src="{% static 'frontend/logotele.png' %}"></a>
+          </li>
+        </ul>
+        </form>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>Envie-nos uma mensagem</h1>
+        <p class="lead">Mande-nos sua mensagem e teremos o prazer em atende-lo.</p>
+        <form role="form" id="contact-form" method="post">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+
+                <div class="form-group label-floating {% if form.name.errors %}has-error{% endif %}">
+                    <label class="control-label">{{ form.name.label }}:</label>
+                    <input type="text" name="name" class="form-control">
+                    <small class="text-danger">{{ form.name.errors }}</small>
+                </div>
+                <div class="form-group label-floating {% if form.email.errors %}has-error{% endif %}">
+                    <label class="control-label">{{ form.email.label }}:</label>
+                    <input type="email" name="email" class="form-control"/>
+                    <small class="text-danger">{{ form.email.errors }}</small>
+                </div>
+                <div class="form-group label-floating {% if form.phone.errors %}has-error{% endif %}">
+                    <label class="control-label">{{ form.phone.label }}:</label>
+                    <input type="text" name="phone" class="form-control"/>
+                    <small class="text-danger">{{ form.phone.errors }}</small>
+                </div>
+                <div class="form-group label-floating {% if form.message.errors %}has-error{% endif %}">
+                    <label class="control-label">{{ form.message.label }}:</label>
+                    <textarea name="message" class="form-control" id="message" rows="6"></textarea>
+                    <small class="text-danger">{{ form.message.errors }}</small>
+                </div>
+                <div class="submit text-center">
+                    <input type="submit" class="btn btn-danger btn-raised btn-round" value="Enviar" />
+                </div>
+            </form>
+      </div>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="{% static 'frontend/bootstrap.min.js' %}"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{% static 'frontend/ie10-viewport-bug-workaround.js' %}"></script>
+  </body>
+</html>

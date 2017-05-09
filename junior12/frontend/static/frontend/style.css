@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster+Two|Montserrat');
+
+body {
+  padding-top: 5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.starter-template {
+  padding: 30px;
+  text-align: center;
+}
+
+
+.navbar-brand {
+  font-family: 'Lobster Two', cursive;
+  font-size: 30px;
+}
+
+
+.nav-link {
+  max-height: 40px;
+}
+
+
+.btn-danger {
+  color: #fff;
+  background-color: #292b2c;
+  border-color: #292b2c;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.btn-danger:hover {
+  color: #fff;
+  background-color: #292b2c;
+  border-color: #292b2c;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.monitorecelular {
+  max-width: 70%;
+}
